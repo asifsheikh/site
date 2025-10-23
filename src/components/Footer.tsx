@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center">
           <p className="text-gray-600 text-sm">
-            © {new Date().getFullYear()} Asif Shaikh. All rights reserved.
+            © {new Date().getFullYear()} Asif Shaikh. Made with ❤️
           </p>
           <div className="mt-4 flex justify-center space-x-6">
             <a
