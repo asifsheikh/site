@@ -93,22 +93,52 @@ export default function WorkExperience() {
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 {/* Company Logo */}
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <div className="w-12 h-12 bg-gray-300 rounded-lg flex items-center justify-center">
-                      <span className="text-gray-600 font-bold text-sm">
-                        {experience.company.split(' ')[0].charAt(0)}
-                      </span>
+                  {experience.company === "Spotify" ? (
+                    <a
+                      href="https://open.spotify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:opacity-80 transition-opacity duration-300"
+                    >
+                      <Image
+                        src={experience.logo}
+                        alt={`${experience.company} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                      />
+                    </a>
+                  ) : (
+                    <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden">
+                      <div className="w-12 h-12 bg-gray-300 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-600 font-bold text-sm">
+                          {experience.company.split(' ')[0].charAt(0)}
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                        {experience.company}
-                      </h3>
+                      {experience.company === "Spotify" ? (
+                        <a
+                          href="https://open.spotify.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block hover:opacity-80 transition-opacity duration-300"
+                        >
+                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
+                            {experience.company}
+                          </h3>
+                        </a>
+                      ) : (
+                        <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                          {experience.company}
+                        </h3>
+                      )}
                       <p className="text-gray-600 mb-2">
                         {experience.location}
                       </p>
