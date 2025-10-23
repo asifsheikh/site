@@ -138,6 +138,51 @@ export default function WorkExperience() {
                         className="object-contain"
                       />
                     </a>
+                  ) : experience.company === "Dunzo" ? (
+                    <a
+                      href="https://www.dunzo.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:opacity-80 transition-opacity duration-300"
+                    >
+                      <Image
+                        src={experience.logo}
+                        alt={`${experience.company} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                      />
+                    </a>
+                  ) : experience.company === "Ola" ? (
+                    <a
+                      href="https://www.olacabs.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:opacity-80 transition-opacity duration-300"
+                    >
+                      <Image
+                        src={experience.logo}
+                        alt={`${experience.company} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                      />
+                    </a>
+                  ) : experience.company === "Persistent Systems" ? (
+                    <a
+                      href="https://www.persistent.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:opacity-80 transition-opacity duration-300"
+                    >
+                      <Image
+                        src={experience.logo}
+                        alt={`${experience.company} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                      />
+                    </a>
                   ) : (
                     <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden">
                       <div className="w-12 h-12 bg-gray-300 rounded-lg flex items-center justify-center">
@@ -178,6 +223,39 @@ export default function WorkExperience() {
                       ) : experience.company === "GoJek" ? (
                         <a
                           href="https://www.gojek.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block hover:opacity-80 transition-opacity duration-300"
+                        >
+                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
+                            {experience.company}
+                          </h3>
+                        </a>
+                      ) : experience.company === "Dunzo" ? (
+                        <a
+                          href="https://www.dunzo.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block hover:opacity-80 transition-opacity duration-300"
+                        >
+                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
+                            {experience.company}
+                          </h3>
+                        </a>
+                      ) : experience.company === "Ola" ? (
+                        <a
+                          href="https://www.olacabs.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block hover:opacity-80 transition-opacity duration-300"
+                        >
+                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
+                            {experience.company}
+                          </h3>
+                        </a>
+                      ) : experience.company === "Persistent Systems" ? (
+                        <a
+                          href="https://www.persistent.com"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block hover:opacity-80 transition-opacity duration-300"
