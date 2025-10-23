@@ -30,9 +30,19 @@ export default function Home() {
           {/* Description paragraphs */}
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
-              Welcome to my digital space. I'm a passionate builder, thinker, and creator, 
-              currently working on meaningful tech projects and products that bridge distance 
-              and bring people closer—both literally and emotionally.
+              I build and scale mobile engineering systems — focusing on developer experience, 
+              modular architectures, and production performance that feels effortless.
+            </p>
+            
+            <p>
+              I'm currently based in Bangkok, Thailand, and work with Agoda as a Staff Mobile Engineer, 
+              where I focus on enabling mobile engineering at scale through improved developer 
+              workflows, faster CI/CD pipelines, and efficient build systems.
+            </p>
+            
+            <p>
+              From developer journeys and tooling to production performance, I'm passionate about 
+              engineering mobile experiences that scale beautifully — for both users and developers.
             </p>
             
             <p>
@@ -41,23 +51,23 @@ export default function Home() {
                 href="/work-experience" 
                 className="underline decoration-2 underline-offset-4 hover:text-gray-900 transition-colors duration-300 font-medium"
               >
-                Work Experience
+                work experience
               </Link>
               {' '}and read my{' '}
               <Link 
                 href="/blogs" 
                 className="underline decoration-2 underline-offset-4 hover:text-gray-900 transition-colors duration-300 font-medium"
               >
-                Blogs
+                blogs
               </Link>
-              . If anything resonates or you'd like to collaborate,{' '}
+              . If something resonates with you or sparks a thought, don't hesitate to{' '}
               <Link 
                 href="/contact" 
                 className="underline decoration-2 underline-offset-4 hover:text-gray-900 transition-colors duration-300 font-medium"
               >
-                get in touch
+                reach out
               </Link>
-              —I'd love to hear from you.
+              —I'd love to connect.
             </p>
           </div>
         </div>
