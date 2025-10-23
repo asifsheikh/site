@@ -33,7 +33,7 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="text-lg text-gray-600">
-            I'm always interested in new opportunities and collaborations.
+            I&apos;m always interested in new opportunities and collaborations.
           </p>
         </div>
 

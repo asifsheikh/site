@@ -83,13 +83,19 @@ export default function WorkExperience() {
           </p>
         </div>
 
-        {/* Work Experience Cards */}
-        <div className="space-y-8">
-          {workExperiences.map((experience, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:border-gray-300"
-            >
+          {/* Work Experience Cards */}
+          <div className="space-y-12">
+            {workExperiences.map((experience, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-gray-300 transition-all duration-500 hover:-translate-y-1"
+                style={{
+                  animationDelay: `${index * 150}ms`,
+                  animation: 'fadeInUp 0.6s ease-out forwards',
+                  opacity: 0,
+                  transform: 'translateY(20px)'
+                }}
+              >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 {/* Company Logo */}
                 <div className="flex-shrink-0">
@@ -194,103 +200,114 @@ export default function WorkExperience() {
                   )}
                 </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                    <div>
-                      {experience.company === "Spotify" ? (
-                        <a
-                          href="https://open.spotify.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block hover:opacity-80 transition-opacity duration-300"
-                        >
-                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                      {/* Left side - Company info */}
+                      <div className="flex-1">
+                        {experience.company === "Spotify" ? (
+                          <a
+                            href="https://open.spotify.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:opacity-80 transition-opacity duration-300"
+                          >
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                              {experience.company}
+                            </h3>
+                          </a>
+                        ) : experience.company === "Agoda" ? (
+                          <a
+                            href="https://www.agoda.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:opacity-80 transition-opacity duration-300"
+                          >
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                              {experience.company}
+                            </h3>
+                          </a>
+                        ) : experience.company === "GoJek" ? (
+                          <a
+                            href="https://www.gojek.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:opacity-80 transition-opacity duration-300"
+                          >
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                              {experience.company}
+                            </h3>
+                          </a>
+                        ) : experience.company === "Dunzo" ? (
+                          <a
+                            href="https://www.dunzo.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:opacity-80 transition-opacity duration-300"
+                          >
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                              {experience.company}
+                            </h3>
+                          </a>
+                        ) : experience.company === "Ola" ? (
+                          <a
+                            href="https://www.olacabs.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:opacity-80 transition-opacity duration-300"
+                          >
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                              {experience.company}
+                            </h3>
+                          </a>
+                        ) : experience.company === "Persistent Systems" ? (
+                          <a
+                            href="https://www.persistent.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:opacity-80 transition-opacity duration-300"
+                          >
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                              {experience.company}
+                            </h3>
+                          </a>
+                        ) : (
+                          <h3 className="text-3xl font-bold text-gray-900 mb-2">
                             {experience.company}
                           </h3>
-                        </a>
-                      ) : experience.company === "Agoda" ? (
-                        <a
-                          href="https://www.agoda.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block hover:opacity-80 transition-opacity duration-300"
-                        >
-                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
-                            {experience.company}
-                          </h3>
-                        </a>
-                      ) : experience.company === "GoJek" ? (
-                        <a
-                          href="https://www.gojek.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block hover:opacity-80 transition-opacity duration-300"
-                        >
-                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
-                            {experience.company}
-                          </h3>
-                        </a>
-                      ) : experience.company === "Dunzo" ? (
-                        <a
-                          href="https://www.dunzo.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block hover:opacity-80 transition-opacity duration-300"
-                        >
-                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
-                            {experience.company}
-                          </h3>
-                        </a>
-                      ) : experience.company === "Ola" ? (
-                        <a
-                          href="https://www.olacabs.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block hover:opacity-80 transition-opacity duration-300"
-                        >
-                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
-                            {experience.company}
-                          </h3>
-                        </a>
-                      ) : experience.company === "Persistent Systems" ? (
-                        <a
-                          href="https://www.persistent.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block hover:opacity-80 transition-opacity duration-300"
-                        >
-                          <h3 className="text-2xl font-bold text-gray-900 mb-1 hover:text-blue-600">
-                            {experience.company}
-                          </h3>
-                        </a>
-                      ) : (
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                          {experience.company}
-                        </h3>
-                      )}
-                      <p className="text-gray-600 mb-2">
-                        {experience.location}
-                      </p>
+                        )}
+                        
+                        <div className="flex items-center gap-2 mb-3">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <p className="text-gray-600 font-medium">
+                            {experience.location}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Right side - Role and duration */}
+                      <div className="text-right sm:text-left sm:ml-6">
+                        <div className="inline-block bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">
+                          {experience.role}
+                        </div>
+                        <p className="text-gray-500 text-sm font-medium text-right">
+                          {experience.period}
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <p className="text-lg font-semibold text-gray-900 mb-1">
-                        {experience.role}
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        {experience.period}
-                      </p>
-                    </div>
-                  </div>
                   
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-lg mb-6">
                     {experience.description}
                   </p>
                   
                   {/* Learn More Button */}
                   <div className="mt-6">
-                    <button className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300">
-                      Learn more →
+                    <button className="text-blue-600 hover:text-blue-800 font-medium transition-all duration-300 hover:translate-x-1 group">
+                      Learn more 
+                      <span className="inline-block ml-1 group-hover:translate-x-1 transition-transform duration-300">→</span>
                     </button>
                   </div>
                 </div>
@@ -306,7 +323,7 @@ export default function WorkExperience() {
               Interested in working together?
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              I'm always excited to discuss new opportunities, collaborations, 
+              I&apos;m always excited to discuss new opportunities, collaborations, 
               or just chat about mobile engineering and developer experience.
             </p>
             <a

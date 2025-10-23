@@ -24,7 +24,7 @@ export default function Home() {
         <div className="max-w-2xl text-center lg:text-left">
           {/* Greeting */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-            Hi, I'm <span className="text-gray-900">Asif Shaikh</span>
+                Hi, I&apos;m <span className="text-gray-900">Asif Shaikh</span>
           </h1>
           
           {/* Description paragraphs */}
@@ -35,13 +35,13 @@ export default function Home() {
             </p>
             
             <p>
-              I'm currently based in Bangkok, Thailand, and work with Agoda as a Staff Mobile Engineer, 
+                  I&apos;m currently based in Bangkok, Thailand, and work with Agoda as a Staff Mobile Engineer,
               where I focus on enabling mobile engineering at scale through improved developer 
               workflows, faster CI/CD pipelines, and efficient build systems.
             </p>
             
             <p>
-              From developer journeys and tooling to production performance, I'm passionate about 
+                  From developer journeys and tooling to production performance, I&apos;m passionate about
               engineering mobile experiences that scale beautifully — for both users and developers.
             </p>
             
@@ -60,14 +60,14 @@ export default function Home() {
               >
                 blogs
               </Link>
-              . If something resonates with you or sparks a thought, don't hesitate to{' '}
+              . If something resonates with you or sparks a thought, don&apos;t hesitate to{' '}
               <Link 
                 href="/contact" 
                 className="underline decoration-2 underline-offset-4 hover:text-gray-900 transition-colors duration-300 font-medium"
               >
                 reach out
               </Link>
-              —I'd love to connect.
+              —I&apos;d love to connect.
             </p>
           </div>
         </div>

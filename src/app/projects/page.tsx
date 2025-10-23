@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
-import { matter } from 'gray-matter'
+import matter from 'gray-matter'
 import ProjectCard from '@/components/ProjectCard'
 import Link from 'next/link'
 
@@ -47,7 +47,7 @@ export default function Projects() {
             My Projects
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A collection of projects I've worked on, showcasing my skills in full-stack development, 
+            A collection of projects I&apos;ve worked on, showcasing my skills in full-stack development, 
             modern web technologies, and problem-solving abilities.
           </p>
         </div>
