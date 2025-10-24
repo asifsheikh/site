@@ -1,6 +1,9 @@
 # Asif Shaikh - Personal Website
 
-A modern, responsive personal website built with Next.js, TypeScript, and Tailwind CSS. Features MDX support for content management and a clean, professional design.
+A modern, responsive personal website built with Next.js, TypeScript, and Tailwind CSS.
+
+## Deployment Status
+✅ Ready for production deployment on Vercel Features MDX support for content management and a clean, professional design.
 
 ## 🚀 Features
 
