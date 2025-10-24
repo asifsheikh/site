@@ -289,11 +289,11 @@ export default function WorkExperience() {
                       </div>
                       
                       {/* Right side - Role and duration */}
-                      <div className="text-right sm:text-left sm:ml-6">
+                      <div className="text-left sm:text-left sm:ml-6">
                         <div className="inline-block bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">
                           {experience.role}
                         </div>
-                        <p className="text-gray-500 text-sm font-medium text-right">
+                        <p className="text-gray-500 text-sm font-medium text-left">
                           {experience.period}
                         </p>
                       </div>
