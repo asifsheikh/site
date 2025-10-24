@@ -18,7 +18,7 @@ const blogPosts: BlogPost[] = [
     id: '1',
     title: 'Understanding the Open-Closed Principle in Software Engineering',
     excerpt: 'Dive into the Open-Closed Principle (OCP) from SOLID principles. Learn how to design code that\'s open for extension but closed for modification, with practical Kotlin examples for Android development.',
-    image: '/blog-images/solid-principles.jpg',
+    image: '/blog-images/OCP.png',
     category: 'Software Design',
     readTime: '8 min read',
     publishDate: 'May 14, 2025',
