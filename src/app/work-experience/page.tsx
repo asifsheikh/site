@@ -202,7 +202,7 @@ export default function WorkExperience() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 text-center sm:text-left">
                       {/* Left side - Company info */}
                       <div className="flex-1">
                         {experience.company === "Spotify" ? (
@@ -289,11 +289,11 @@ export default function WorkExperience() {
                       </div>
                       
                       {/* Right side - Role and duration */}
-                      <div className="text-left sm:text-left sm:ml-6">
+                      <div className="text-center sm:text-left sm:ml-6">
                         <div className="text-lg font-bold text-gray-900 mb-2">
                           {experience.role}
                         </div>
-                        <p className="text-gray-500 text-sm font-medium text-left">
+                        <p className="text-gray-500 text-sm font-medium text-center sm:text-left">
                           {experience.period}
                         </p>
                       </div>
