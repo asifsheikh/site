@@ -3,32 +3,33 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="h-full bg-white flex">
-      {/* Image section - takes up 50% of screen width, image right-aligned */}
-      <div className="w-1/2 flex items-center justify-end pr-8">
-        <div className="relative w-1/2 h-2/3">
+    <div className="h-full bg-white flex flex-col lg:flex-row">
+      {/* Image section - full width on mobile, 50% on desktop */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end px-4 lg:pr-8 py-8 lg:py-0">
+        <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-1/2 lg:h-2/3">
           <Image
             src="/profile.png"
             alt="Asif Shaikh"
             fill
             className="object-cover rounded-3xl shadow-2xl"
             priority
+            sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 50vw"
           />
           {/* Subtle overlay for better text contrast if needed */}
           <div className="absolute inset-0 rounded-3xl bg-black/5"></div>
         </div>
       </div>
 
-      {/* Text content section - takes up remaining 50% of screen, centered with image */}
-      <div className="w-1/2 flex items-center justify-start pl-8">
+      {/* Text content section - full width on mobile, 50% on desktop */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start px-4 lg:pl-8 py-8 lg:py-0">
         <div className="max-w-2xl text-center lg:text-left">
           {/* Greeting */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 lg:mb-8 leading-tight">
                 Hi, I&apos;m <span className="text-gray-900">Asif Shaikh</span>
           </h1>
           
           {/* Description paragraphs */}
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <div className="space-y-4 lg:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
             <p>
               I build and scale mobile engineering systems — focusing on developer experience, 
               modular architectures, and production performance that feels effortless.
