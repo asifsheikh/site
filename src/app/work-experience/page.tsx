@@ -290,7 +290,7 @@ export default function WorkExperience() {
                       
                       {/* Right side - Role and duration */}
                       <div className="text-left sm:text-left sm:ml-6">
-                        <div className="inline-block bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">
+                        <div className="text-lg font-bold text-gray-900 mb-2">
                           {experience.role}
                         </div>
                         <p className="text-gray-500 text-sm font-medium text-left">
