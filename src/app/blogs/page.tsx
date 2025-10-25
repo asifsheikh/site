@@ -26,6 +26,16 @@ const blogPosts: BlogPost[] = [
     featured: true
   },
   {
+    id: '7',
+    title: 'Kotlin Multiplatform vs Flutter: A Simple Comparison for Android Developers',
+    excerpt: 'A practical comparison between Kotlin Multiplatform and Flutter for Android developers. Learn when to choose each technology, their strengths, weaknesses, and real-world considerations from my experience.',
+    image: '/blog-images/kotlin-flutter-comparison.jpg',
+    category: 'Mobile Development',
+    readTime: '10 min read',
+    publishDate: 'April 1, 2025',
+    slug: 'kotlin-multiplatform-vs-flutter'
+  },
+  {
     id: '2',
     title: 'Building Mobile Apps at Scale: Lessons from Spotify',
     excerpt: 'Sharing insights from my time at Spotify, where I worked on the Premium experience for Asian markets. Learn about Mobius architecture, Bazel monorepos, and scaling mobile engineering.',
