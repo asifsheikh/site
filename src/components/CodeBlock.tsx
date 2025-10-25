@@ -2,12 +2,6 @@
 
 import { Highlight, themes } from 'prism-react-renderer'
 import { useState } from 'react'
-import 'prismjs/components/prism-kotlin'
-import 'prismjs/components/prism-java'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/components/prism-typescript'
-import 'prismjs/components/prism-python'
-import 'prismjs/components/prism-bash'
 
 interface CodeBlockProps {
   code: string
@@ -26,6 +20,33 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
       console.error('Failed to copy code:', err)
     }
   }
+
+  // Map language names to supported languages
+  const getSupportedLanguage = (lang: string) => {
+    const languageMap: { [key: string]: string } = {
+      'kotlin': 'kotlin',
+      'java': 'java',
+      'javascript': 'javascript',
+      'js': 'javascript',
+      'typescript': 'typescript',
+      'ts': 'typescript',
+      'python': 'python',
+      'py': 'python',
+      'bash': 'bash',
+      'shell': 'bash',
+      'sh': 'bash',
+      'json': 'json',
+      'xml': 'xml',
+      'html': 'html',
+      'css': 'css',
+      'sql': 'sql',
+      'yaml': 'yaml',
+      'yml': 'yaml'
+    }
+    return languageMap[lang.toLowerCase()] || 'text'
+  }
+
+  const supportedLanguage = getSupportedLanguage(language)
 
   return (
     <div className="my-8 rounded-xl overflow-hidden shadow-lg border border-gray-200">
@@ -60,7 +81,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
       <Highlight
         theme={themes.vsDark}
         code={code}
-        language={language}
+        language={supportedLanguage}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={`${className} p-4 overflow-x-auto text-sm leading-relaxed`} style={style}>
