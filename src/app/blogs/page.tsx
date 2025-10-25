@@ -17,7 +17,7 @@ const blogPosts: BlogPost[] = [
   {
     id: '1',
     title: 'Understanding the Open-Closed Principle in Software Engineering',
-    excerpt: 'Dive into the Open-Closed Principle (OCP) from SOLID principles. Learn how to design code that\'s open for extension but closed for modification, with practical Kotlin examples for Android development.',
+    excerpt: 'Dive into the Open-Closed Principle (OCP) from SOLID principles. Learn how to design code that&apos;s open for extension but closed for modification, with practical Kotlin examples for Android development.',
     image: '/blog-images/OCP.png',
     category: 'Software Design',
     readTime: '8 min read',
@@ -37,8 +37,8 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '8',
-    title: 'Navigating Team Dynamics: An Engineer\'s Guide to Seamless Embedding at Spotify',
-    excerpt: 'Learn about Spotify\'s unique approach to internal mobility and team embedding. Discover how engineers can grow by working across different teams and the benefits this brings to both personal development and organizational culture.',
+    title: 'Navigating Team Dynamics: An Engineer&apos;s Guide to Seamless Embedding at Spotify',
+    excerpt: 'Learn about Spotify&apos;s unique approach to internal mobility and team embedding. Discover how engineers can grow by working across different teams and the benefits this brings to both personal development and organizational culture.',
     image: '/blog-images/team_dynamics.png',
     category: 'Tech',
     readTime: '8 min read',
@@ -48,7 +48,7 @@ const blogPosts: BlogPost[] = [
   {
     id: '9',
     title: 'Getting Interviewed at Spotify – A Dream Come True',
-    excerpt: 'My journey through Spotify\'s interview process for an Android Engineering position in Stockholm. Learn about their structured approach, remote interviews, and the four distinct final rounds that make Spotify stand out.',
+    excerpt: 'My journey through Spotify&apos;s interview process for an Android Engineering position in Stockholm. Learn about their structured approach, remote interviews, and the four distinct final rounds that make Spotify stand out.',
     image: '/blog-images/spotify_interview.png',
     category: 'Tech',
     readTime: '7 min read',
@@ -198,7 +198,7 @@ export default function BlogsPage() {
             More Content Coming Soon
           </h2>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            I'm constantly working on new posts about mobile engineering, developer experience, 
+            I&apos;m constantly working on new posts about mobile engineering, developer experience, 
             and building scalable systems. Keep checking back for fresh insights and practical tips!
           </p>
           <div className="flex justify-center">
