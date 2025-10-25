@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import BlogContent from '@/components/BlogContent'
 
 interface BlogPost {
   slug: string
@@ -934,23 +935,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
-              <div 
-                className="text-gray-700 leading-relaxed"
-                dangerouslySetInnerHTML={{ 
-                  __html: post.content
-                    .replace(/\n/g, '<br>')
-                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                    .replace(/`(.*?)`/g, '<code class="bg-gray-100 px-2 py-1 rounded text-sm">$1</code>')
-                    .replace(/```kotlin\n([\s\S]*?)\n```/g, '<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-kotlin">$1</code></pre>')
-                    .replace(/```kotlin\n([\s\S]*?)\n```/g, '<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-kotlin">$1</code></pre>')
-                    .replace(/```\n([\s\S]*?)\n```/g, '<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>$1</code></pre>')
-                    .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-900 mt-8 mb-4">$1</h3>')
-                    .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-6">$1</h2>')
-                    .replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold text-gray-900 mt-12 mb-8">$1</h1>')
-                    .replace(/^> (.*$)/gm, '<blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-6">$1</blockquote>')
-                }}
-              />
+              <BlogContent content={post.content} />
             </div>
 
             {/* Article Footer */}
