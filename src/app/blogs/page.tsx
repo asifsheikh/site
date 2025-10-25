@@ -46,6 +46,26 @@ const blogPosts: BlogPost[] = [
     slug: 'navigating-team-dynamics-spotify'
   },
   {
+    id: '9',
+    title: 'Getting Interviewed at Spotify – A Dream Come True',
+    excerpt: 'My journey through Spotify\'s interview process for an Android Engineering position in Stockholm. Learn about their structured approach, remote interviews, and the four distinct final rounds that make Spotify stand out.',
+    image: '/blog-images/spotify_interview.png',
+    category: 'Tech',
+    readTime: '7 min read',
+    publishDate: 'February 6, 2022',
+    slug: 'getting-interviewed-at-spotify'
+  },
+  {
+    id: '10',
+    title: 'SOLID Principles – Separation of Concern',
+    excerpt: 'The first in a series on SOLID principles. Learn about Separation of Concern (SoC) - a foundational concept that helps organize code so each part does only one kind of task. Includes practical Kotlin examples.',
+    image: '/blog-images/solid.pmg',
+    category: 'Tech',
+    readTime: '5 min read',
+    publishDate: 'April 6, 2019',
+    slug: 'solid-principles-separation-of-concern'
+  },
+  {
     id: '2',
     title: 'Building Mobile Apps at Scale: Lessons from Spotify',
     excerpt: 'Sharing insights from my time at Spotify, where I worked on the Premium experience for Asian markets. Learn about Mobius architecture, Bazel monorepos, and scaling mobile engineering.',

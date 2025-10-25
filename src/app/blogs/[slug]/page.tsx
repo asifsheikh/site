@@ -180,6 +180,236 @@ If the answer is yes to all three, then you're not just reviewing code—you're 
 *What's your experience with code reviews? Have you had a review that changed how you think about feedback? I'd love to hear your stories and continue this conversation about building better teams through better code reviews.*
     `
   },
+  'solid-principles-separation-of-concern': {
+    slug: 'solid-principles-separation-of-concern',
+    title: 'SOLID Principles – Separation of Concern',
+    excerpt: 'The first in a series on SOLID principles. Learn about Separation of Concern (SoC) - a foundational concept that helps organize code so each part does only one kind of task. Includes practical Kotlin examples.',
+    image: '/blog-images/solid.pmg',
+    category: 'Tech',
+    readTime: '5 min read',
+    publishDate: 'April 6, 2019',
+    author: 'Asif Shaikh',
+    content: `
+# SOLID Principles – Separation of Concern
+
+In this blog post, I'm starting a series to explain the famous **SOLID principles** of software development. These are five core principles that help us write better, cleaner, and more maintainable code. I'll break the series down into individual posts for each principle so we can focus on understanding one at a time.
+
+Whether you're just starting out or already working as a senior engineer, knowing these principles will help you design better systems. And let's be honest — writing code can feel frustrating, stressful, and even boring if it's messy. But when done right, it becomes fun, satisfying, and creative.
+
+So let's begin this journey with the first one:
+
+---
+
+## Separation of Concern (SoC)
+
+Even though SoC is not the "S" in SOLID (we'll get to that in the next blog), it's a very foundational concept that supports all of the SOLID principles. SoC is about organizing your code in a way that **each part of your program does only one kind of task** or is responsible for only one thing.
+
+In simple terms:
+
+> **"Don't put everything into one place."**
+
+---
+
+## Why is Separation of Concern important?
+
+Imagine you're building a small app that shows a list of users.  
+Now think about everything you need to do:
+
+* Fetch users from the internet
+* Parse the data
+* Display it on screen
+
+If you do **all of this inside one function or one class**, it becomes hard to read, test, or update in the future. That's what SoC helps you avoid.
+
+---
+
+## A Simple Kotlin Example
+
+Let's take an example in Kotlin:
+
+\`\`\`kotlin
+// BAD: Everything in one place
+class UserManager {
+
+    fun loadAndShowUsers() {
+        // Fetching data
+        val response = URL("https://api.example.com/users").readText()
+
+        // Parsing data (simplified)
+        val users = response.split(",").map { it.trim() }
+
+        // Showing data
+        println("Users: $users")
+    }
+}
+\`\`\`
+
+In the above code, fetching, parsing, and displaying — everything is inside one function. This breaks the SoC principle.
+
+---
+
+## Let's Fix It with Separation of Concern
+
+Let's now split responsibilities:
+
+\`\`\`kotlin
+// 1. Responsibility: Fetching users
+class UserService {
+    fun fetchUsers(): String {
+        return URL("https://api.example.com/users").readText()
+    }
+}
+
+// 2. Responsibility: Parsing users
+class UserParser {
+    fun parse(rawData: String): List<String> {
+        return rawData.split(",").map { it.trim() }
+    }
+}
+
+// 3. Responsibility: Displaying users
+class UserPresenter {
+    fun show(users: List<String>) {
+        println("Users: $users")
+    }
+}
+
+// 4. Coordinator class that brings them together
+class UserManager(
+    private val userService: UserService,
+    private val userParser: UserParser,
+    private val userPresenter: UserPresenter
+) {
+    fun loadAndShowUsers() {
+        val rawData = userService.fetchUsers()
+        val users = userParser.parse(rawData)
+        userPresenter.show(users)
+    }
+}
+\`\`\`
+
+Now:
+
+* \`UserService\` only fetches data.
+* \`UserParser\` only parses it.
+* \`UserPresenter\` only displays it.
+* \`UserManager\` coordinates everything.
+
+Each class has **a single concern**, and that's the beauty of SoC.
+
+---
+
+## Benefits of Separation of Concern
+
+* ✅ Easier to understand code
+* ✅ Easier to test (e.g. you can test \`UserParser\` independently)
+* ✅ Easier to change or extend (e.g. switch from console output to a UI without touching parsing logic)
+* ✅ Better teamwork (team members can work on separate parts)
+
+---
+
+## Final Thoughts
+
+Separation of Concern is a principle that sets the foundation for good architecture and clean code. It's not just for big projects — even small apps can benefit from writing code with clear separation between responsibilities.
+
+In the next blog post, I'll cover the **Single Responsibility Principle**, which builds on the same idea and is the "S" in SOLID.
+
+Let's keep writing clean, enjoyable code ✨
+
+---
+
+*This post is part of my series on SOLID principles. Check out my other posts on software design, mobile engineering, and building better teams.*
+    `
+  },
+  'getting-interviewed-at-spotify': {
+    slug: 'getting-interviewed-at-spotify',
+    title: 'Getting Interviewed at Spotify – A Dream Come True',
+    excerpt: 'My journey through Spotify\'s interview process for an Android Engineering position in Stockholm. Learn about their structured approach, remote interviews, and the four distinct final rounds that make Spotify stand out.',
+    image: '/blog-images/spotify_interview.png',
+    category: 'Tech',
+    readTime: '7 min read',
+    publishDate: 'February 6, 2022',
+    author: 'Asif Shaikh',
+    content: `
+# Getting Interviewed at Spotify – A Dream Come True
+
+Spotify has always been a dream company for me — not just because it's one of the best engineering companies out there, but also because of the innovation, culture, and impact it drives at a global scale. After months of focused preparation, countless interviews at various companies, and a fair share of rejections, I was incredibly fortunate to crack the interview process at Spotify.
+
+## Why Spotify Stood Out
+
+From the very beginning, Spotify's interview process stood out for its structure, transparency, and emphasis on the right aspects in each round. The recruiter coordination was top-notch — smooth, timely, and reassuring. It felt less like a traditional hiring process and more like a two-way conversation to explore mutual fit.
+
+## Remote Interviews in a Post-Pandemic World
+
+In today's world, in-person interviews have become a thing of the past. Most companies, including Spotify, have adapted to a virtual interview process. While coordinating interviews across time zones can be challenging, Spotify managed it effortlessly. From application to final decision, the process took around **two months** — and every step felt thoughtful and well-managed.
+
+## The Application Process
+
+I applied for the **Android Engineering position in Stockholm** through the Spotify Careers website, which is comprehensive and user-friendly. It contains detailed information about open roles and the overall application process.
+
+A few weeks after submitting my application, I was contacted by a recruiter for an initial phone call. The call was relaxed and friendly — mainly focused on understanding my background and ensuring I had clarity about the role and Spotify's expectations.
+
+## The Interview Journey
+
+After the initial call, I moved on to two main phases of the interview process: the **second round** and the **final (onsite) rounds**.
+
+> 💡 _Note: Each round usually included a panel of two interviewers — one leading the interview and the other shadowing, which is quite common and nothing to worry about._
+
+---
+
+### ✅ **Second Round: Deep Dive Screening**
+
+This round involved:
+
+* A discussion on my technical background
+* Android domain-specific questions
+* A coding exercise (in Java and Kotlin)
+* A few follow-up questions based on my solutions
+
+This round felt like a thorough screening and went really well. A few days later, I received positive feedback and was invited for the final rounds.
+
+---
+
+### 🎯 **Final Rounds (Onsite)**
+
+The final stage consisted of **four distinct interviews**, each about an hour long. These were scheduled based on mutual availability — often packed into one or two days, giving enough time in between for preparation.
+
+Here's a breakdown of each round:
+
+1. **Programming / DSA Round**  
+Focused on data structures, algorithms, and complexity analysis. You'll be expected to code, explain your approach, and optimize solutions.
+
+2. **System Design Round**  
+A deep dive into designing, building, and scaling real-world systems — testing your architectural thinking and trade-off analysis.
+
+3. **IDE Programming Round**  
+A hands-on session in Android Studio. This is a live coding, screen-sharing, and pair-programming style interview — designed to simulate day-to-day development work.
+
+4. **Spotify Values Interview**  
+A cultural fit round to understand the engineering environments you've worked in and how you align with Spotify's values. The key here is **authenticity** — be yourself and speak from experience.
+
+---
+
+## 🎁 Pro Tips for Future Candidates
+
+* **Start simple, then iterate.** Begin with a basic solution and evolve it based on feedback or new insights.
+* **Be honest.** It's okay not to know everything. Acknowledging gaps is better than faking it.
+* **Ask questions.** If something is unclear, don't hesitate to ask. Interviews are conversations, not interrogations.
+* **Think out loud.** Communicate your thought process — it helps the interviewers understand your reasoning and problem-solving style.
+
+---
+
+## Wrapping Up
+
+Once the final interviews were complete, I received feedback within a few days — regardless of the outcome, Spotify ensures timely communication, which I deeply appreciated.
+
+If you're dreaming of working at Spotify or a similar company, keep going! Stay curious, keep learning, and most importantly — be authentic. Wishing you all the best in your journey 🚀
+
+---
+
+*This post is part of my series on career growth and interview experiences. Check out my other posts on team dynamics, mobile engineering, and building better teams.*
+    `
+  },
   'navigating-team-dynamics-spotify': {
     slug: 'navigating-team-dynamics-spotify',
     title: 'Navigating Team Dynamics: An Engineer\'s Guide to Seamless Embedding at Spotify',
