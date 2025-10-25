@@ -968,61 +968,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </article>
 
-        {/* Related Posts */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">More Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Link
-              href="/blogs/spotify-mobile-scale"
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="relative h-48">
-                <Image
-                  src="/blog-images/spotify-mobile.jpg"
-                  alt="Building Mobile Apps at Scale: Lessons from Spotify"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full">
-                  Mobile Engineering
-                </span>
-                <h3 className="text-lg font-bold text-gray-900 mt-3 mb-2">
-                  Building Mobile Apps at Scale: Lessons from Spotify
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Sharing insights from my time at Spotify, where I worked on the Premium experience for Asian markets.
-                </p>
-              </div>
-            </Link>
-
-            <Link
-              href="/blogs/developer-experience-matters"
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="relative h-48">
-                <Image
-                  src="/blog-images/developer-experience.jpg"
-                  alt="Developer Experience: Why It Matters More Than You Think"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full">
-                  Developer Experience
-                </span>
-                <h3 className="text-lg font-bold text-gray-900 mt-3 mb-2">
-                  Developer Experience: Why It Matters More Than You Think
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Exploring how improving developer workflows can dramatically impact team productivity.
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>
       </div>
     </div>
   )
