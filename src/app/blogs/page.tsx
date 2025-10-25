@@ -28,12 +28,22 @@ const blogPosts: BlogPost[] = [
   {
     id: '7',
     title: 'Kotlin Multiplatform vs Flutter: A Simple Comparison for Android Developers',
-    excerpt: 'A practical comparison between Kotlin Multiplatform and Flutter for Android developers. Learn when to choose each technology, their strengths, weaknesses, and real-world considerations from my experience.',
-    image: '/blog-images/kotlin-flutter-comparison.jpg',
-    category: 'Mobile Development',
-    readTime: '10 min read',
+    excerpt: 'A practical comparison between Kotlin Multiplatform and Flutter for Android developers. Learn when to choose each technology, their strengths, weaknesses, and real-world considerations.',
+    image: '/blog-images/kmp.png',
+    category: 'Tech',
+    readTime: '6 min read',
     publishDate: 'April 1, 2025',
     slug: 'kotlin-multiplatform-vs-flutter'
+  },
+  {
+    id: '8',
+    title: 'Navigating Team Dynamics: An Engineer\'s Guide to Seamless Embedding at Spotify',
+    excerpt: 'Learn about Spotify\'s unique approach to internal mobility and team embedding. Discover how engineers can grow by working across different teams and the benefits this brings to both personal development and organizational culture.',
+    image: '/blog-images/team_dynamics.png',
+    category: 'Tech',
+    readTime: '8 min read',
+    publishDate: 'December 17, 2023',
+    slug: 'navigating-team-dynamics-spotify'
   },
   {
     id: '2',
@@ -117,7 +127,7 @@ export default function BlogsPage() {
                       src={featuredPost.image}
                       alt={featuredPost.title}
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-l-2xl md:rounded-l-2xl rounded-t-2xl md:rounded-t-none"
                     />
                   </div>
                 </div>
@@ -167,7 +177,7 @@ export default function BlogsPage() {
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-t-xl"
                   />
                 </div>
                 <div className="p-6">
