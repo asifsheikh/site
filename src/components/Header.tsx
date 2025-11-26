@@ -15,55 +15,46 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-gray-50 border-b border-gray-200 relative">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <Link 
-              href="/" 
-              className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-300"
+            <Link
+              href="/"
+              className="text-2xl font-bold font-heading text-gray-900 hover:text-primary transition-colors duration-300"
               onClick={closeMobileMenu}
             >
               Asif Shaikh
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <div className="flex items-center space-x-8">
-              <Link
-                href="/work-experience"
-                className="text-gray-600 hover:text-gray-900 px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-white hover:shadow-sm rounded-lg"
-              >
-                Work Experience
-              </Link>
-              <Link
-                href="/blogs"
-                className="text-gray-600 hover:text-gray-900 px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-white hover:shadow-sm rounded-lg"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/resume"
-                className="text-gray-600 hover:text-gray-900 px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-white hover:shadow-sm rounded-lg"
-              >
-                Resume
-              </Link>
-              <Link
-                href="/contact"
-                className="text-gray-600 hover:text-gray-900 px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-white hover:shadow-sm rounded-lg"
-              >
-                Contact
-              </Link>
+              {[
+                { name: 'Work Experience', href: '/work-experience' },
+                { name: 'Blog', href: '/blogs' },
+                { name: 'Resume', href: '/resume' },
+                { name: 'Contact', href: '/contact' },
+              ].map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+                >
+                  {item.name}
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </Link>
+              ))}
             </div>
           </nav>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button 
+            <button
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-gray-900 p-2 transition-colors duration-300"
+              className="text-gray-600 hover:text-primary p-2 transition-colors duration-300"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
@@ -81,37 +72,24 @@ export default function Header() {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg z-50 animate-fade-in-up">
             <nav className="px-6 py-4">
               <div className="flex flex-col space-y-2">
-                <Link
-                  href="/work-experience"
-                  className="text-gray-600 hover:text-gray-900 px-4 py-3 text-base font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg"
-                  onClick={closeMobileMenu}
-                >
-                  Work Experience
-                </Link>
-                <Link
-                  href="/blogs"
-                  className="text-gray-600 hover:text-gray-900 px-4 py-3 text-base font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg"
-                  onClick={closeMobileMenu}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/resume"
-                  className="text-gray-600 hover:text-gray-900 px-4 py-3 text-base font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg"
-                  onClick={closeMobileMenu}
-                >
-                  Resume
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-gray-600 hover:text-gray-900 px-4 py-3 text-base font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg"
-                  onClick={closeMobileMenu}
-                >
-                  Contact
-                </Link>
+                {[
+                  { name: 'Work Experience', href: '/work-experience' },
+                  { name: 'Blog', href: '/blogs' },
+                  { name: 'Resume', href: '/resume' },
+                  { name: 'Contact', href: '/contact' },
+                ].map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </nav>
           </div>
