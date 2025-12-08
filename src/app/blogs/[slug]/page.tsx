@@ -185,7 +185,7 @@ If the answer is yes to all three, then you're not just reviewing code—you're 
     slug: 'solid-principles-separation-of-concern',
     title: 'SOLID Principles – Separation of Concern',
     excerpt: 'The first in a series on SOLID principles. Learn about Separation of Concern (SoC) - a foundational concept that helps organize code so each part does only one kind of task. Includes practical Kotlin examples.',
-      image: '/blog-images/solid.png',
+    image: '/blog-images/solid.png',
     category: 'Tech',
     readTime: '5 min read',
     publishDate: 'April 6, 2019',
@@ -861,13 +861,13 @@ _This blog post is part of a series on SOLID principles. Check out Part 1: Singl
 }
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = params
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
   const post = blogPosts[slug]
 
   if (!post) {
