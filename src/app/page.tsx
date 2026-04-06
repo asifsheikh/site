@@ -1,6 +1,41 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+interface CategoryCardProps {
+  title: string;
+  description: string;
+  link: string;
+  bgContent: React.ReactNode;
+  isProminent?: boolean;
+}
+
+const CategoryCard = ({ title, description, link, bgContent, isProminent }: CategoryCardProps) => (
+  <Link
+    href={link}
+    className={`group relative overflow-hidden rounded-[20px] p-8 h-56 flex flex-col justify-end transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 bg-white border border-black/[0.04] ${
+      isProminent 
+        ? "shadow-[0_8px_30px_-8px_rgba(0,0,0,0.08)]" 
+        : "shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]"
+    }`}
+  >
+    {/* Background Node Injection */}
+    <div className="absolute inset-0 transition-all duration-300 ease-out group-hover:brightness-[1.03]">
+      {bgContent}
+    </div>
+    
+    {/* Subtle Inner overlay for uniform readability */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/50 to-transparent transition-colors duration-300 group-hover:from-white group-hover:via-white/70" />
+    
+    {/* Content */}
+    <div className="relative z-10 transition-transform duration-300 ease-out">
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      <p className="text-sm text-gray-500 leading-relaxed max-w-[95%]">
+        {description}
+      </p>
+    </div>
+  </Link>
+);
+
 export default function Home() {
   return (
     <div className="min-h-full bg-white flex flex-col lg:flex-row relative overflow-hidden">
@@ -32,55 +67,60 @@ export default function Home() {
 
           <div className="space-y-6 text-lg sm:text-xl text-gray-600 leading-relaxed font-light">
             <p>
-              I build things, explore places, and write about what I learn along the way.
+              I&apos;m someone who&apos;s curious about how things work — not just in code, but in people, places, and everyday life.
             </p>
 
             <p>
-              Currently based in Bangkok — moving between code, cities, and perspectives that shape how I see the world.
+              I build software, but I also spend a lot of time exploring the world, observing, and trying to make sense of what I see. Over time, I&apos;ve realized that both — building and exploring — are just different ways of understanding the same thing: how systems work, and how they shape us.
             </p>
 
             <p>
-              I&apos;m an engineer by profession, but I&apos;m equally curious about the world beyond it.
-              I enjoy understanding how things work — from systems and products to people and everyday life.
-              Travel has become a big part of that journey, helping me see things differently and think more clearly.
+              Lately, I&apos;ve been moving between cities, perspectives, and ideas — currently based in Bangkok — letting each place change how I think, even in small ways.
+            </p>
+            
+            <p>
+              This space is a reflection of that journey.
             </p>
 
-            <div className="pt-4 pb-2">
-              <p className="font-medium text-gray-900 mb-4 text-left">I spend my time across a few different worlds:</p>
+            <div className="pt-8 pb-4 w-full">
+              <h2 className="text-xl font-medium text-gray-900 mb-8 text-left">
+                I spend my time across a few different worlds:
+              </h2>
               
-              <div className="space-y-6 text-left">
-                <div className="group">
-                  <Link href="/travel" className="block">
-                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-gray-600 transition-colors flex items-center lg:justify-start justify-center gap-2">
-                      <span className="text-gray-400">→</span> Travel
-                    </h3>
-                    <p className="text-base text-gray-500 mt-1 lg:ml-6">Stories and reflections from places I&apos;ve experienced.</p>
-                  </Link>
-                </div>
-
-                <div className="group">
-                  <Link href="/blogs" className="block">
-                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-gray-600 transition-colors flex items-center lg:justify-start justify-center gap-2">
-                      <span className="text-gray-400">→</span> Thoughts
-                    </h3>
-                    <p className="text-base text-gray-500 mt-1 lg:ml-6">Ideas, observations, and things I&apos;m still figuring out.</p>
-                  </Link>
-                </div>
-
-                <div className="group">
-                  <Link href="/work-experience" className="block">
-                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-gray-600 transition-colors flex items-center lg:justify-start justify-center gap-2">
-                      <span className="text-gray-400">→</span> Work
-                    </h3>
-                    <p className="text-base text-gray-500 mt-1 lg:ml-6">What I build and how I think about systems.</p>
-                  </Link>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <CategoryCard 
+                  title="Travel" 
+                  description="Places, moments, and stories that stayed with me." 
+                  link="/travel" 
+                  bgContent={
+                    <div className="w-full h-full bg-gradient-to-br from-orange-50/80 via-rose-50/50 to-sky-50/60" />
+                  }
+                />
+                
+                <CategoryCard 
+                  title="Thoughts" 
+                  description="Ideas, questions, and observations I'm still exploring." 
+                  link="/blogs" 
+                  isProminent={true}
+                  bgContent={
+                    <div className="w-full h-full bg-gradient-to-tr from-purple-50/60 via-indigo-50/30 to-blue-50/40" />
+                  }
+                />
+                
+                <CategoryCard 
+                  title="Work" 
+                  description="Things I've built and how I think about systems." 
+                  link="/work-experience" 
+                  bgContent={
+                    <div className="w-full h-full bg-gray-50/50 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:16px_16px] opacity-15" />
+                  }
+                />
               </div>
             </div>
 
             <div className="pt-6">
               <p>
-                If something here resonates with you, I&apos;d love to hear from you.
+                If something here resonates, I&apos;d love to connect.
               </p>
               <Link
                 href="/contact"
