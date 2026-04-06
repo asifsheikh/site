@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${outfit.variable} font-sans bg-background text-foreground antialiased`}>
         <div className="h-screen flex flex-col overflow-hidden bg-white">
           <Header />
-          <main className="flex-1 overflow-auto bg-white">
+          <main className="flex-1 overflow-auto bg-white pt-20">
             {children}
           </main>
           <Footer />
