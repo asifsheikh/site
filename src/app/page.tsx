@@ -26,54 +26,68 @@ export default function Home() {
       {/* Text content section - full width on mobile, 50% on desktop */}
       <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start px-4 lg:pl-12 py-8 lg:py-0">
         <div className="max-w-2xl text-center lg:text-left animate-fade-in-up">
-          {/* Greeting */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-gray-900 mb-8 leading-tight tracking-tight">
-            Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Asif Shaikh</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-gray-900 mb-8 leading-tight tracking-tight">
+            Hi, I&apos;m Asif.
           </h1>
 
-          {/* Description paragraphs */}
           <div className="space-y-6 text-lg sm:text-xl text-gray-600 leading-relaxed font-light">
             <p>
-              I build and scale mobile engineering systems — focusing on <span className="font-medium text-gray-900">developer experience</span>,
-              <span className="font-medium text-gray-900"> modular architectures</span>, and <span className="font-medium text-gray-900">production performance</span> that feels effortless.
+              I build things, explore places, and write about what I learn along the way.
             </p>
 
             <p>
-              I&apos;m currently based in Bangkok, Thailand, and work with <span className="font-medium text-gray-900">Agoda</span> as a Staff Mobile Engineer,
-              where I focus on enabling mobile engineering at scale through improved developer
-              workflows, faster CI/CD pipelines, and efficient build systems.
+              Currently based in Bangkok — moving between code, cities, and perspectives that shape how I see the world.
             </p>
 
             <p>
-              From developer journeys and tooling to production performance, I&apos;m passionate about
-              engineering mobile experiences that scale beautifully — for both users and developers.
+              I&apos;m an engineer by profession, but I&apos;m equally curious about the world beyond it.
+              I enjoy understanding how things work — from systems and products to people and everyday life.
+              Travel has become a big part of that journey, helping me see things differently and think more clearly.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-4 pb-2">
+              <p className="font-medium text-gray-900 mb-4 text-left">I spend my time across a few different worlds:</p>
+              
+              <div className="space-y-6 text-left">
+                <div className="group">
+                  <Link href="/travel" className="block">
+                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-gray-600 transition-colors flex items-center lg:justify-start justify-center gap-2">
+                      <span className="text-gray-400">→</span> Travel
+                    </h3>
+                    <p className="text-base text-gray-500 mt-1 lg:ml-6">Stories and reflections from places I&apos;ve experienced.</p>
+                  </Link>
+                </div>
+
+                <div className="group">
+                  <Link href="/blogs" className="block">
+                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-gray-600 transition-colors flex items-center lg:justify-start justify-center gap-2">
+                      <span className="text-gray-400">→</span> Thoughts
+                    </h3>
+                    <p className="text-base text-gray-500 mt-1 lg:ml-6">Ideas, observations, and things I&apos;m still figuring out.</p>
+                  </Link>
+                </div>
+
+                <div className="group">
+                  <Link href="/work-experience" className="block">
+                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-gray-600 transition-colors flex items-center lg:justify-start justify-center gap-2">
+                      <span className="text-gray-400">→</span> Work
+                    </h3>
+                    <p className="text-base text-gray-500 mt-1 lg:ml-6">What I build and how I think about systems.</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-6">
               <p>
-                Feel free to explore my{' '}
-                <Link
-                  href="/work-experience"
-                  className="text-primary font-medium hover:text-primary/80 underline decoration-2 underline-offset-4 transition-colors duration-300"
-                >
-                  work experience
-                </Link>
-                {' '}and read my{' '}
-                <Link
-                  href="/blogs"
-                  className="text-primary font-medium hover:text-primary/80 underline decoration-2 underline-offset-4 transition-colors duration-300"
-                >
-                  blogs
-                </Link>
-                . If something resonates with you or sparks a thought, don&apos;t hesitate to{' '}
-                <Link
-                  href="/contact"
-                  className="text-primary font-medium hover:text-primary/80 underline decoration-2 underline-offset-4 transition-colors duration-300"
-                >
-                  reach out
-                </Link>
-                —I&apos;d love to connect.
+                If something here resonates with you, I&apos;d love to hear from you.
               </p>
+              <Link
+                href="/contact"
+                className="inline-block mt-4 text-gray-900 font-medium hover:text-gray-600 underline decoration-gray-300 decoration-2 underline-offset-4 hover:decoration-gray-600 transition-all duration-300"
+              >
+                Let&apos;s connect.
+              </Link>
             </div>
           </div>
         </div>
