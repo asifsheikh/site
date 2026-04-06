@@ -8,8 +8,21 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.asifshaikh.xyz'),
   title: 'Asif Shaikh - Personal Website',
   description: 'Personal website showcasing projects, resume, and contact information',
+  openGraph: {
+    title: 'Asif Shaikh - Personal Website',
+    description: 'Personal website showcasing projects, resume, and contact information',
+    url: 'https://www.asifshaikh.xyz',
+    siteName: 'Asif Shaikh',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Asif Shaikh - Personal Website',
+    description: 'Personal website showcasing projects, resume, and contact information',
+  },
 }
 
 export default function RootLayout({
