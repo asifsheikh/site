@@ -35,17 +35,17 @@ const TravelCard = ({ name, reflection, imageUrl }: TravelCardProps) => (
   >
     {/* Image Container */}
     <div 
-      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-[1.03] brightness-110 contrast-105"
+      className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-out group-hover:scale-105 brightness-110 contrast-105"
       style={{ backgroundImage: `url('${imageUrl}')` }}
     />
     
-    {/* Depth & Softness Overlay (Narrative Gradient, No Blur) */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10 transition-opacity duration-300 group-hover:opacity-90" />
+    {/* Depth & Softness Overlay (Narrative Gradient with Smooth Hover Fade) */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/25 to-black/5 transition-colors duration-300 group-hover:from-black/40 group-hover:via-black/15 group-hover:to-transparent" />
     
     {/* Content Container */}
     <div className="relative z-10 transition-transform duration-300 ease-out">
-      <h3 className="text-xl font-semibold text-white mb-1.5 tracking-wide">{name}</h3>
-      <p className="text-sm text-gray-200 leading-relaxed max-w-[95%]">
+      <h3 className="text-xl font-semibold text-white mb-3 tracking-wide">{name}</h3>
+      <p className="text-sm text-gray-100 leading-loose max-w-[95%]">
         {reflection}
       </p>
     </div>
@@ -59,9 +59,11 @@ export default function TravelPage() {
         
         {/* Section 1 - Visited Places */}
         <section>
-          <h1 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight mb-10">
-            Places I&apos;ve been to
-          </h1>
+          <div className="mb-10">
+            <h1 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight">
+              Places I&apos;ve been to — and what stayed with me.
+            </h1>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {visitedPlaces.map((place) => (
               <TravelCard key={place.name} {...place} />
