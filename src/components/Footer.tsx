@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 py-12">
+    <footer className="bg-white border-t border-gray-100 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center space-y-6">
-          <div className="flex space-x-8">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="flex space-x-6">
             <a
               href="https://github.com/asifshaikh"
               className="text-gray-400 hover:text-primary transition-colors duration-300 transform hover:scale-110"
