@@ -6,16 +6,16 @@ export const metadata: Metadata = {
 }
 
 const visitedPlaces = [
-  { name: "Indonesia", reflection: "A place where nature and stillness quietly take over.", imageUrl: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800" },
-  { name: "Singapore", reflection: "Precision, order, and a city that feels intentionally built.", imageUrl: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=800" },
   { name: "Thailand", reflection: "A place that slowly changes your rhythm without you noticing.", imageUrl: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&q=80&w=800" },
-  { name: "Vietnam", reflection: "Movement everywhere — yet somehow deeply grounded.", imageUrl: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=800" },
   { name: "Cambodia", reflection: "A reminder of history’s weight and human resilience.", imageUrl: "https://images.unsplash.com/photo-1560930950-5cc20e80e392?auto=format&fit=crop&q=80&w=800" },
+  { name: "Vietnam", reflection: "Movement everywhere — yet somehow deeply grounded.", imageUrl: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=800" },
   { name: "Germany", reflection: "Structure, discipline, and systems that just work.", imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800" },
   { name: "Sweden", reflection: "Calm, balance, and space to think.", imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" },
   { name: "France", reflection: "A place where everyday life feels expressive.", imageUrl: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800" },
   { name: "Spain", reflection: "Energy, warmth, and living in the moment.", imageUrl: "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?auto=format&fit=crop&q=80&w=800" },
   { name: "Czech Republic", reflection: "Quiet beauty and stories hidden in old streets.", imageUrl: "https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&q=80&w=800" },
+  { name: "Singapore", reflection: "Precision, order, and a city that feels intentionally built.", imageUrl: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=800" },
+  { name: "Indonesia", reflection: "A place where nature and stillness quietly take over.", imageUrl: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800" },
 ];
 
 const upcomingPlaces = [
