@@ -5,7 +5,9 @@ export const metadata: Metadata = {
   description: 'A personal collection of places and what they meant.',
 }
 
-const visitedPlaces = [
+const places = [
+  { name: "Malaysia", reflection: "Somewhere I’m about to experience for the first time.", imageUrl: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800" },
+  { name: "Kazakhstan", reflection: "A place I’m curious about — still unknown.", imageUrl: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800" },
   { name: "Thailand", reflection: "A place that slowly changes your rhythm without you noticing.", imageUrl: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&q=80&w=800" },
   { name: "Cambodia", reflection: "A reminder of history’s weight and human resilience.", imageUrl: "https://images.unsplash.com/photo-1560930950-5cc20e80e392?auto=format&fit=crop&q=80&w=800" },
   { name: "Vietnam", reflection: "Movement everywhere — yet somehow deeply grounded.", imageUrl: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=800" },
@@ -16,11 +18,6 @@ const visitedPlaces = [
   { name: "Czech Republic", reflection: "Quiet beauty and stories hidden in old streets.", imageUrl: "https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&q=80&w=800" },
   { name: "Singapore", reflection: "Precision, order, and a city that feels intentionally built.", imageUrl: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=800" },
   { name: "Indonesia", reflection: "A place where nature and stillness quietly take over.", imageUrl: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800" },
-];
-
-const upcomingPlaces = [
-  { name: "Kazakhstan", reflection: "A place I’m curious about — still unknown.", imageUrl: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800" },
-  { name: "Malaysia", reflection: "Somewhere I’m about to experience for the first time.", imageUrl: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800" },
 ];
 
 interface TravelCardProps {
@@ -57,7 +54,7 @@ export default function TravelPage() {
     <div className="min-h-full bg-white flex justify-center py-20 px-6 sm:px-12 animate-fade-in-up">
       <div className="max-w-[1024px] w-full flex flex-col gap-y-20">
         
-        {/* Section 1 - Visited Places */}
+        {/* Travel Journey */}
         <section>
           <div className="mb-10">
             <h1 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight">
@@ -65,19 +62,7 @@ export default function TravelPage() {
             </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visitedPlaces.map((place) => (
-              <TravelCard key={place.name} {...place} />
-            ))}
-          </div>
-        </section>
-
-        {/* Section 2 - Upcoming Explorations */}
-        <section>
-          <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight mb-10">
-            Places I&apos;m about to explore
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {upcomingPlaces.map((place) => (
+            {places.map((place) => (
               <TravelCard key={place.name} {...place} />
             ))}
           </div>
