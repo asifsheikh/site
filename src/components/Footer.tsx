@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 py-6">
+    <footer className="bg-background border-t border-border py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="flex space-x-6">
             <a
               href="https://github.com/asifshaikh"
-              className="text-gray-400 hover:text-primary transition-colors duration-300 transform hover:scale-110"
+              className="text-muted-foreground/70 hover:text-primary transition-colors duration-300 transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -21,7 +21,7 @@ export default function Footer() {
             </a>
             <a
               href="https://www.linkedin.com/in/asifsheikh/"
-              className="text-gray-400 hover:text-primary transition-colors duration-300 transform hover:scale-110"
+              className="text-muted-foreground/70 hover:text-primary transition-colors duration-300 transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -31,7 +31,7 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="text-gray-500 text-sm font-medium">
+          <p className="text-muted-foreground text-sm font-medium">
             © {new Date().getFullYear()} Asif Shaikh. All rights reserved.
           </p>
         </div>

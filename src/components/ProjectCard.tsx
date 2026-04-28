@@ -18,19 +18,19 @@ export default function ProjectCard({
   liveUrl,
 }: ProjectCardProps) {
   return (
-    <div className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-primary/20 hover:-translate-y-1">
-      <h3 className="text-xl font-bold font-heading text-gray-900 mb-2 group-hover:text-primary transition-colors">
-        <Link href={href} className="focus:outline-none">
+    <div className="group bg-card text-card-foreground rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-border/10 hover:border-primary/30 hover:-translate-y-1">
+      <h3 className="text-xl font-bold font-heading text-foreground mb-2 group-hover:text-primary transition-colors">
+        <Link href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm">
           <span className="absolute inset-0" aria-hidden="true" />
           {title}
         </Link>
       </h3>
-      <p className="text-gray-600 mb-4 line-clamp-3">{description}</p>
+      <p className="text-muted-foreground mb-4 line-clamp-3">{description}</p>
       <div className="flex flex-wrap gap-2 mb-6">
         {technologies.map((tech) => (
           <span
             key={tech}
-            className="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-medium rounded-full border border-gray-100"
+            className="px-2.5 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full border border-border/10"
           >
             {tech}
           </span>
@@ -42,7 +42,7 @@ export default function ProjectCard({
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
           >
             Live Demo
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,7 +55,7 @@ export default function ProjectCard({
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
           >
             GitHub
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

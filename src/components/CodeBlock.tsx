@@ -49,7 +49,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
   const supportedLanguage = getSupportedLanguage(language)
 
   return (
-    <div className="my-8 rounded-xl overflow-hidden shadow-lg border border-gray-200">
+    <div className="my-8 rounded-xl overflow-hidden shadow-lg border border-border/15 bg-card">
       {/* Header with language label and copy button */}
       <div className="bg-gray-800 px-4 py-2 flex justify-between items-center">
         <span className="text-gray-300 text-sm font-medium">
@@ -57,7 +57,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
         </span>
         <button
           onClick={copyToClipboard}
-          className="text-gray-400 hover:text-gray-200 transition-colors duration-200 flex items-center gap-1 text-xs"
+          className="text-gray-400 hover:text-gray-200 transition-colors duration-200 flex items-center gap-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded"
         >
           {copied ? (
             <>

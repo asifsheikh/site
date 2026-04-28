@@ -31,16 +31,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth light">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body className={`${inter.variable} ${outfit.variable} font-sans bg-background text-foreground antialiased`}>
-        <div className="h-screen flex flex-col overflow-hidden bg-white">
+        <div className="h-screen flex flex-col overflow-hidden bg-background">
           <Header />
-          <main className="flex-1 overflow-auto bg-white pt-20">
+          <main className="flex-1 overflow-auto bg-background pt-20">
             {children}
           </main>
           <Footer />

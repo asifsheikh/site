@@ -31,23 +31,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     const { data, content } = matter(fileContent)
 
     return (
-      <div className="min-h-screen bg-gray-50 py-16">
+      <div className="min-h-screen bg-background py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <Link
               href="/projects"
-              className="text-blue-600 hover:text-blue-800 transition-colors"
+              className="text-primary hover:text-primary/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
             >
               ← Back to Projects
             </Link>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
+          <div className="bg-card text-card-foreground rounded-lg shadow-md p-8 md:p-12 border border-border/10">
             <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {data.title}
               </h1>
-              <p className="text-xl text-gray-600 mb-6">
+              <p className="text-xl text-muted-foreground mb-6">
                 {data.description}
               </p>
 
@@ -55,7 +55,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 {data.technologies?.map((tech: string) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                    className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-border/10"
                   >
                     {tech}
                   </span>
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     href={data.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors"
+                    className="bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     Live Demo
                   </a>
@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     href={data.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md font-medium hover:bg-gray-50 transition-colors"
+                    className="border border-border/20 text-foreground px-6 py-2 rounded-md font-medium hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     View Code
                   </a>

@@ -51,13 +51,13 @@ const TravelCard = ({ name, reflection, imageUrl }: TravelCardProps) => (
 
 export default function TravelPage() {
   return (
-    <div className="min-h-full bg-white flex justify-center py-20 px-6 sm:px-12 animate-fade-in-up">
+    <div className="min-h-full bg-background flex justify-center py-20 px-6 sm:px-12 animate-fade-in-up">
       <div className="max-w-[1024px] w-full flex flex-col gap-y-20">
         
         {/* Travel Journey */}
         <section>
           <div className="mb-10">
-            <h1 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-medium text-foreground tracking-tight">
               Places I&apos;ve been to — and what stayed with me.
             </h1>
           </div>

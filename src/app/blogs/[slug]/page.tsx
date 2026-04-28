@@ -875,13 +875,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Blog */}
         <div className="mb-8">
           <Link
             href="/blogs"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300"
+            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -891,7 +891,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Article Header */}
-        <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <article className="bg-card text-card-foreground rounded-2xl shadow-lg overflow-hidden border border-border/10">
           {/* Hero Image */}
           <div className="relative h-64 md:h-80">
             <Image
@@ -906,30 +906,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="p-8 md:p-12">
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full">
                 {post.category}
               </span>
-              <span className="text-gray-500 text-sm">•</span>
-              <span className="text-gray-500 text-sm">{post.readTime}</span>
-              <span className="text-gray-500 text-sm">•</span>
-              <span className="text-gray-500 text-sm">{post.publishDate}</span>
+              <span className="text-muted-foreground text-sm">•</span>
+              <span className="text-muted-foreground text-sm">{post.readTime}</span>
+              <span className="text-muted-foreground text-sm">•</span>
+              <span className="text-muted-foreground text-sm">{post.publishDate}</span>
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               {post.title}
             </h1>
 
             {/* Author */}
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                <span className="text-gray-600 font-semibold text-sm">
+              <div className="w-10 h-10 bg-muted rounded-full flex items-center justify-center border border-border/10">
+                <span className="text-muted-foreground font-semibold text-sm">
                   {post.author.split(' ').map(n => n[0]).join('')}
                 </span>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">{post.author}</p>
-                <p className="text-gray-500 text-sm">Mobile Engineer</p>
+                <p className="font-semibold text-foreground">{post.author}</p>
+                <p className="text-muted-foreground text-sm">Mobile Engineer</p>
               </div>
             </div>
 
@@ -939,15 +939,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Article Footer */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="mt-12 pt-8 border-t border-border/15">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     Published on {post.publishDate} by {post.author}
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <button className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                  <button className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                     </svg>
@@ -955,7 +955,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </button>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors duration-300"
+                    className="inline-flex items-center px-4 py-2 bg-muted text-foreground font-medium rounded-lg hover:bg-muted/80 transition-colors duration-300 border border-border/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

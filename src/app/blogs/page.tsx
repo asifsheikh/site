@@ -82,14 +82,14 @@ export default function BlogsPage() {
   const regularPosts = blogPosts.filter(post => !post.featured)
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             My Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Thoughts on mobile engineering, developer experience, and building scalable systems. 
             Sharing lessons learned from startups to scale-ups.
           </p>
@@ -98,8 +98,8 @@ export default function BlogsPage() {
         {/* Featured Blog Post */}
         {featuredPost && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8">Featured Post</h2>
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <h2 className="text-2xl font-semibold text-foreground mb-8">Featured Post</h2>
+            <div className="bg-card text-card-foreground rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-border/10">
               <div className="md:flex">
                 <div className="md:w-1/2">
                   <div className="relative h-64 md:h-full">
@@ -113,23 +113,23 @@ export default function BlogsPage() {
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full">
                       {featuredPost.category}
                     </span>
-                    <span className="text-gray-500 text-sm">•</span>
-                    <span className="text-gray-500 text-sm">{featuredPost.readTime}</span>
+                    <span className="text-muted-foreground text-sm">•</span>
+                    <span className="text-muted-foreground text-sm">{featuredPost.readTime}</span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
                     {featuredPost.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-sm">{featuredPost.publishDate}</span>
+                    <span className="text-muted-foreground text-sm">{featuredPost.publishDate}</span>
                     <Link
                       href={`/blogs/${featuredPost.slug}`}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300"
+                      className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
                     >
                       Read More
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,12 +145,12 @@ export default function BlogsPage() {
 
         {/* Regular Blog Posts Grid */}
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">All Posts</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-8">All Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => (
               <article
                 key={post.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-card text-card-foreground rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border/10"
               >
                 <div className="relative h-48">
                   <Image
@@ -162,23 +162,23 @@ export default function BlogsPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full">
+                    <span className="px-2 py-1 bg-muted text-muted-foreground text-xs font-semibold rounded-full border border-border/10">
                       {post.category}
                     </span>
-                    <span className="text-gray-400 text-xs">•</span>
-                    <span className="text-gray-500 text-xs">{post.readTime}</span>
+                    <span className="text-muted-foreground/70 text-xs">•</span>
+                    <span className="text-muted-foreground text-xs">{post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight line-clamp-2">
+                  <h3 className="text-xl font-bold text-foreground mb-3 leading-tight line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-xs">{post.publishDate}</span>
+                    <span className="text-muted-foreground text-xs">{post.publishDate}</span>
                     <Link
                       href={`/blogs/${post.slug}`}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-300"
+                      className="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
                     >
                       Read More
                       <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -193,16 +193,16 @@ export default function BlogsPage() {
         </div>
 
         {/* Keep Checking Back */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <div className="bg-card text-card-foreground rounded-2xl shadow-lg p-8 text-center border border-border/10">
+          <h2 className="text-2xl font-semibold text-foreground mb-4">
             More Content Coming Soon
           </h2>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             I&apos;m constantly working on new posts about mobile engineering, developer experience, 
             and building scalable systems. Keep checking back for fresh insights and practical tips!
           </p>
           <div className="flex justify-center">
-            <div className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-lg">
+            <div className="inline-flex items-center px-6 py-3 bg-muted text-muted-foreground font-medium rounded-lg border border-border/10">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>

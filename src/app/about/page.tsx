@@ -7,17 +7,17 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-full bg-white flex justify-center py-20 px-6 sm:px-12 animate-fade-in-up">
+    <div className="min-h-full bg-background flex justify-center py-20 px-6 sm:px-12 animate-fade-in-up">
       <div className="max-w-[650px] w-full flex flex-col gap-y-14">
         {/* Section 1 - Opening */}
         <section>
-          <h1 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-medium text-foreground tracking-tight">
             A little more about me.
           </h1>
         </section>
 
         {/* Section 2 - Core Identity */}
-        <section className="space-y-6 text-lg text-gray-500 leading-relaxed font-light">
+        <section className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
           <p>
             I&apos;ve always been curious about how things work — not just in code, but in people, environments, and the small details of everyday life.
           </p>
@@ -30,10 +30,10 @@ export default function AboutPage() {
         </section>
 
         {/* Divider Optional Polish */}
-        <div className="w-12 h-px bg-gray-200" />
+        <div className="w-12 h-px bg-border/25" />
 
         {/* Section 3 - Perspective Shift */}
-        <section className="space-y-6 text-lg text-gray-500 leading-relaxed font-light">
+        <section className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
           <p>
             It wasn&apos;t always this way.
           </p>
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 4 - Travel Influence */}
-        <section className="space-y-6 text-lg text-gray-500 leading-relaxed font-light">
+        <section className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
           <p>
             Travel has played a big role in that shift.
           </p>
@@ -53,10 +53,10 @@ export default function AboutPage() {
         </section>
 
         {/* Divider Optional Polish */}
-        <div className="w-12 h-px bg-gray-200" />
+        <div className="w-12 h-px bg-border/25" />
 
         {/* Section 5 - Work Philosophy */}
-        <section className="space-y-6 text-lg text-gray-500 leading-relaxed font-light">
+        <section className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
           <p>
             In my work, I&apos;m drawn to systems — how they&apos;re designed, how they scale, and how small decisions can have long-term impact.
           </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 6 - Closing */}
-        <section className="space-y-6 text-lg text-gray-500 leading-relaxed font-light">
+        <section className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
           <p>
             I don&apos;t have everything figured out, and I don&apos;t think I&apos;m supposed to.
           </p>

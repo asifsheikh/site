@@ -70,14 +70,14 @@ const workExperiences: WorkExperience[] = [
 
 export default function WorkExperience() {
   return (
-    <div className="min-h-screen bg-white py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Work Experience
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A journey through mobile engineering, from enterprise development to scaling 
             developer experience at leading tech companies.
           </p>
@@ -88,7 +88,7 @@ export default function WorkExperience() {
             {workExperiences.map((experience, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-gray-300 transition-all duration-500 hover:-translate-y-1"
+                className="bg-card text-card-foreground border border-border/10 rounded-2xl p-8 hover:shadow-xl hover:border-border/20 transition-all duration-500 hover:-translate-y-1"
                 style={{
                   animationDelay: `${index * 150}ms`,
                   animation: 'fadeInUp 0.6s ease-out forwards',
@@ -190,9 +190,9 @@ export default function WorkExperience() {
                       />
                     </a>
                   ) : (
-                    <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden">
-                      <div className="w-12 h-12 bg-gray-300 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-600 font-bold text-sm">
+                    <div className="w-16 h-16 bg-muted rounded-xl flex items-center justify-center overflow-hidden border border-border/10">
+                      <div className="w-12 h-12 bg-border/20 rounded-lg flex items-center justify-center">
+                        <span className="text-muted-foreground font-bold text-sm">
                           {experience.company.split(' ')[0].charAt(0)}
                         </span>
                       </div>
@@ -212,7 +212,7 @@ export default function WorkExperience() {
                             rel="noopener noreferrer"
                             className="block hover:opacity-80 transition-opacity duration-300"
                           >
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            <h3 className="text-3xl font-bold text-foreground mb-2 hover:text-primary transition-colors duration-300">
                               {experience.company}
                             </h3>
                           </a>
@@ -223,7 +223,7 @@ export default function WorkExperience() {
                             rel="noopener noreferrer"
                             className="block hover:opacity-80 transition-opacity duration-300"
                           >
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            <h3 className="text-3xl font-bold text-foreground mb-2 hover:text-primary transition-colors duration-300">
                               {experience.company}
                             </h3>
                           </a>
@@ -234,7 +234,7 @@ export default function WorkExperience() {
                             rel="noopener noreferrer"
                             className="block hover:opacity-80 transition-opacity duration-300"
                           >
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            <h3 className="text-3xl font-bold text-foreground mb-2 hover:text-primary transition-colors duration-300">
                               {experience.company}
                             </h3>
                           </a>
@@ -245,7 +245,7 @@ export default function WorkExperience() {
                             rel="noopener noreferrer"
                             className="block hover:opacity-80 transition-opacity duration-300"
                           >
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            <h3 className="text-3xl font-bold text-foreground mb-2 hover:text-primary transition-colors duration-300">
                               {experience.company}
                             </h3>
                           </a>
@@ -256,7 +256,7 @@ export default function WorkExperience() {
                             rel="noopener noreferrer"
                             className="block hover:opacity-80 transition-opacity duration-300"
                           >
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            <h3 className="text-3xl font-bold text-foreground mb-2 hover:text-primary transition-colors duration-300">
                               {experience.company}
                             </h3>
                           </a>
@@ -267,22 +267,22 @@ export default function WorkExperience() {
                             rel="noopener noreferrer"
                             className="block hover:opacity-80 transition-opacity duration-300"
                           >
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            <h3 className="text-3xl font-bold text-foreground mb-2 hover:text-primary transition-colors duration-300">
                               {experience.company}
                             </h3>
                           </a>
                         ) : (
-                          <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                          <h3 className="text-3xl font-bold text-foreground mb-2">
                             {experience.company}
                           </h3>
                         )}
                         
                         <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
-                          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-muted-foreground/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
-                          <p className="text-gray-600 font-medium">
+                          <p className="text-muted-foreground font-medium">
                             {experience.location}
                           </p>
                         </div>
@@ -290,22 +290,22 @@ export default function WorkExperience() {
                       
                       {/* Right side - Role and duration */}
                       <div className="text-center sm:text-left sm:ml-6">
-                        <div className="text-lg font-bold text-gray-900 mb-2">
+                        <div className="text-lg font-bold text-foreground mb-2">
                           {experience.role}
                         </div>
-                        <p className="text-gray-500 text-sm font-medium text-center sm:text-left">
+                        <p className="text-muted-foreground text-sm font-medium text-center sm:text-left">
                           {experience.period}
                         </p>
                       </div>
                     </div>
                   
-                  <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                  <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                     {experience.description}
                   </p>
                   
                   {/* Learn More Button */}
                   <div className="mt-6">
-                    <button className="text-blue-600 hover:text-blue-800 font-medium transition-all duration-300 hover:translate-x-1 group">
+                    <button className="text-primary hover:text-primary/80 font-medium transition-all duration-300 hover:translate-x-1 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded">
                       Learn more 
                       <span className="inline-block ml-1 group-hover:translate-x-1 transition-transform duration-300">→</span>
                     </button>
@@ -318,17 +318,17 @@ export default function WorkExperience() {
 
         {/* Footer CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-card text-card-foreground rounded-2xl p-8 border border-border/10">
+            <h2 className="text-2xl font-bold text-foreground mb-4">
               Interested in working together?
             </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               I&apos;m always excited to discuss new opportunities, collaborations, 
               or just chat about mobile engineering and developer experience.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-300"
+              className="inline-flex items-center px-6 py-3 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Get in Touch
             </a>
